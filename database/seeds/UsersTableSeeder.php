@@ -12,6 +12,11 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         //
-        factory(App\User::class, 3)->create();
+        factory(App\User::class, 5)->create()->each(function($user){
+            $user   ->  questions()
+                    ->  saveMany(
+                        factory(App\Question::class, rand(1,7))->make()
+                    );
+        });
     }
 }
