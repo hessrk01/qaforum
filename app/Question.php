@@ -23,9 +23,9 @@ class Question extends Item
         return route("questions.show", $this->slug);
     }
 
-    public function getCreatedDateAttribute(){
-        return $this->created_at->diffForHumans();
-    }
+    // public function getCreatedDateAttribute(){
+    //     return $this->created_at->diffForHumans();
+    // }
 
     public function getStatusAttribute()
     {
