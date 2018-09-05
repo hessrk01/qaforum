@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Answer extends Model
+class Answer extends Item
 {
     public function question()
     {
@@ -16,8 +16,8 @@ class Answer extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function getBodyHtmlAttribute()
-    {
-        return \Parsedown::instance()->text($this->body);
-    }
+    // public function getBodyHtmlAttribute()
+    // {
+    //     return \Parsedown::instance()->text($this->body);
+    // }
 }

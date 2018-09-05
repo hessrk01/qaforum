@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Question extends Item
 {
     //
     protected $fillable = ['title', 'body',];
@@ -40,10 +40,10 @@ class Question extends Model
         return "unanswered";
     }
 
-    public function getBodyHtmlAttribute()
-    {
-        return \Parsedown::instance()->text($this->body);
-    }
+    // public function getBodyHtmlAttribute()
+    // {
+    //     return \Parsedown::instance()->text($this->body);
+    // }
 
     public function answers()
     {
